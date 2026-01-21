@@ -1,0 +1,33 @@
+services:
+  web:
+    build: .
+    container_name: card_distribution_app
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
+    restart: unless-stopped
+
+  # MySQL database (for SQL improvement test)
+  # Using MySQL 8 for ARM64 (Apple Silicon) compatibility
+  db:
+    image: mysql:8.0
+    platform: linux/arm64
+    container_name: card_distribution_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: jobs_db
+      MYSQL_USER: app_user
+      MYSQL_PASSWORD: app_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./sql:/docker-entrypoint-initdb.d
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password
+
+volumes:
+  mysql_data:
