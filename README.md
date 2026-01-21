@@ -140,27 +140,6 @@ curl "http://localhost:8080/api/distribute_cards.php?people=0"
 | Documentation | 40 min |
 | Testing | 20 min |
 
----
-
-## 👤 Author
-
-**Developer:** Mandy Lam
-**Test:** Tyrell Programming Assessment
-**Date:** January 2025
-
----
-
-## 🤖 AI Usage
-
-Developed with assistance from Claude AI for:
-- Code structure
-- Documentation
-- SQL optimization strategies
-- Error handling patterns
-
-All code reviewed and approved by developer.
-
----
 
 ## 📄 License
 
