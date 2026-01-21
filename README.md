@@ -148,6 +148,9 @@ Submitted for Tyrell programming test.
 
 ---
 
+## Arthor
+Mandy with cursor AI
+
 ## Quick Reference
 
 ```bash
